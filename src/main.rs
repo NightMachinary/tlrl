@@ -54,7 +54,7 @@ fn main() -> Result<(), Error> {
         Arg::with_name("prt")
             .short("p")
             .long("prefix-title")
-            .help("Prepends the specified string to the title of the page.")
+            .help("Prepends the specified string to the title of the page. (Optional)")
             .takes_value(true)
     ).get_matches();
 
