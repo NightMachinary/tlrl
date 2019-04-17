@@ -1,8 +1,19 @@
 ## Differences from the Original
 
-Look at the commits, but here is a partial summary:
+I have forked this from [sodiumjoe](https://github.com/sodiumjoe/tlrl).
+Look at the commits to see what I have changed, but here is a partial summary:
 
-* Uses local mercury-parser (so it should be available on your PATH)(I have not removed the code for reading the API from config, but you can just put jibberish in it now :D)
+* Uses local [mercury-parser](https://github.com/postlight/mercury-parser) (so it should be available on your PATH)(I have not removed the code for reading the API from config, but you can just put jibberish in it now :D)
+
+  Basically just do this:
+
+  ```
+  # Install Mercury globally
+  yarn global add @postlight/mercury-parser
+  #   or
+  npm -g install @postlight/mercury-parser
+  ```
+
 * Supports --prefix-title.
 
 tl;rl
@@ -10,9 +21,15 @@ tl;rl
 
 Send a web page to your kindle for reading later from the command line.
 
+## Installation
+
+Install rust and cargo (Just google them). Then use:
+
+`cargo install --git https://github.com/NightMachinary/tlrl/`
+
 ## Configuration
 
-(Read the differences from the original at the top first.)
+Read [the differences from the original](#differences-from-the-original) at the top first.
 
 1. [Get an api key for the Mercury API](https://mercury.postlight.com/web-parser/).
 2. [Create an application-specific password for gmail](https://myaccount.google.com/apppasswords).
@@ -41,6 +58,18 @@ Send a web page to your kindle for reading later from the command line.
 
 ```
 $ tlrl <url>
+```
+
+This helper function was useful in the days that we used the remote Mercury API (usage: `retry tlrl ...`):
+
+```
+retry () {
+	until "$@"
+	do
+		echo Retrying \'"$*"\' "..." >&2
+		sleep 1
+	done
+}
 ```
 
 ## Help
