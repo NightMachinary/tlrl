@@ -21,6 +21,12 @@ tl;rl
 
 Send a web page to your kindle for reading later from the command line.
 
+## Installation
+
+Install rust and cargo (Just google them). Then use:
+
+`cargo install --git https://github.com/NightMachinary/tlrl/`
+
 ## Configuration
 
 Read [the differences from the original](#differences-from-the-original) at the top first.
