@@ -36,8 +36,8 @@ use email::send;
 
 fn main() -> Result<(), Error> {
     let matches = App::new("Too Long; Read Later")
-        .version("1.0")
-        .author("Joe Moon <joe@xoxomoon.com>")
+        .version("1.0.1")
+        .author("Joe Moon <joe@xoxomoon.com>; Forked by Fereidoon Mehri.")
         .about("Send a web page to your kindle for reading later.")
         .arg(
             Arg::with_name("url")
@@ -50,7 +50,16 @@ fn main() -> Result<(), Error> {
                 .long("verbose")
                 .multiple(true)
                 .help("Sets the level of verbosity"),
-        ).get_matches();
+        ).arg(
+        Arg::with_name("prt")
+            .short("p")
+            .long("prefix-title")
+            .help("Prepends the specified string to the title of the page.")
+            .takes_value(true)
+    ).get_matches();
+
+    let prefix_title = matches.value_of("prt").unwrap_or("");
+    debug!("Prefix-title: {}", prefix_title);
 
     let log_level = match matches.occurrences_of("v") {
         0 => "error",
@@ -68,7 +77,6 @@ fn main() -> Result<(), Error> {
         Configuration::new().map_err(|error| format_err!("Configuration error: {}", error))?;
     let url = matches.value_of("url").unwrap();
 
-    let doc = parser::parse(url, config.get_mercury_token())?;
-
+    let doc = parser::parse(url, config.get_mercury_token(), prefix_title)?;
     send(doc, config.get_email_config())
 }

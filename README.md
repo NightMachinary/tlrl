@@ -1,11 +1,18 @@
+## Differences from the Original
+
+Look at the commits, but here is a partial summary:
+
+* Uses local mercury-parser (so it should be available on your PATH)(I have not removed the code for reading the API from config, but you can just put jibberish in it now :D)
+* Supports --prefix-title.
+
 tl;rl
 =====
-
-## SORRY, THIS IS BROKEN RIGHT NOW BECAUSE MERCURY API HAS SHUT DOWN. YOU CAN STILL GET IT TO WORK IF YOU RUN YOUR OWN MERCURY API INSTANCE (see https://github.com/postlight/mercury-parser)
 
 Send a web page to your kindle for reading later from the command line.
 
 ## Configuration
+
+(Read the differences from the original at the top first.)
 
 1. [Get an api key for the Mercury API](https://mercury.postlight.com/web-parser/).
 2. [Create an application-specific password for gmail](https://myaccount.google.com/apppasswords).
