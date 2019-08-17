@@ -1,6 +1,6 @@
 ## DEPRECATED
 
-I have reimplemented a URL-to-Kindle CLI application in my scripts (Currently https://github.com/NightMachinary/.shells but I plan to move the scripts to their own repo). It's the function called `tlrl-ng` in `scraping.zsh`. It uses already established tools (e.g., pandoc, calibre, mercury-parser, curl, ...) to does a wonderful job. I no longer plan to use tlrl, as it is buggy, slow to install via `cargo`, and hard to hack on. `tlrl-ng` maintains backwards-compatibility with `tlrl` and can be used as a drop-in replacement. (Though its verbosity is different from `tlrl`.)
+I have reimplemented a URL-to-Kindle CLI application in my scripts (Currently https://github.com/NightMachinary/.shells but I plan to move the scripts to their own repo). It's the function called `tlrl-ng` in `scraping.zsh`. It uses already established tools (e.g., pandoc, calibre, mercury-parser, curl, ...) to do a stable, reliable, maintainable job. I no longer plan to use tlrl, as it is buggy, slow to install via `cargo`, and hard to hack on. `tlrl-ng` maintains backwards-compatibility with `tlrl` and can be used as a drop-in replacement. (Though its verbosity is different from `tlrl`.)
 
 ## Differences from the Original
 
